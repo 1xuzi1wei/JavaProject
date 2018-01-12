@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" import = "com.lyq.bean.Email" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>邮箱认证系统</title>
+    <title>验证邮箱地址是否合法</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,13 +19,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-  <b>邮箱认证系统</b>
-    <form action="result.jsp" method="post" >
-    邮箱地址：<input type="text" name="mailAdd"><br>
-    <input type="submit" value="提交查询内容">
-    </form>
+  <% 
+  request.setCharacterEncoding("UTF-8");
+  String mailAdd = request.getParameter("mailAdd");/* 获取邮箱地址 */
+//   实例化Email，并对mailAdd进行赋值
+ Email email = new Email(mailAdd);
+ if(email.isEmail()){
+ out.print(mailAdd+"<br>是一个标准的邮箱地址！<br>");
+ }else
+ {
+ 	out.print(mailAdd+"<br>不是一个标准的邮箱地址！<br>");
+ }
+
+  %>
+  <a href= "index.jsp">返回</a>
   </body>
 </html>

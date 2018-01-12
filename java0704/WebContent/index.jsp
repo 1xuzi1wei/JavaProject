@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>邮箱认证系统</title>
+    <title>添加用户信息</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -21,10 +21,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <b>邮箱认证系统</b>
-    <form action="result.jsp" method="post" >
-    邮箱地址：<input type="text" name="mailAdd"><br>
-    <input type="submit" value="提交查询内容">
-    </form>
+    <b>添加用户信息</b><br>
+    <form action="reg.jsp" method="post">
+    姓名：<input type="text" name="name"><br>
+   年龄：<input type="text" name="age"><br>
+   性别：<input type="text" name="sex"><br>
+   住址：<input type="text" name="address"><br>
+   <input type="submit" value="添加用户信息">
+   </form>
   </body>
 </html>

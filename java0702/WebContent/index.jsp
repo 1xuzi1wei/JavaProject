@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>邮箱认证系统</title>
+    <title>获取JavaBean属性信息</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -21,10 +21,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <b>邮箱认证系统</b>
-    <form action="result.jsp" method="post" >
-    邮箱地址：<input type="text" name="mailAdd"><br>
-    <input type="submit" value="提交查询内容">
-    </form>
+  <jsp:useBean id="produce" class="com.lyq.bean.Produce"></jsp:useBean>
+  <ul>
+  <li>
+  商品名称：<jsp:getProperty property="name" name="produce"/>
+  </li>
+    <li>
+价格：<jsp:getProperty property="price" name="produce"/>
+</li>
+  <li>
+  数量：<jsp:getProperty property="count" name="produce"/>
+  </li>
+    <li>
+   厂址 ：<jsp:getProperty property="factoryAdd" name="produce"/>
+  </li>
+  </ul>
   </body>
 </html>

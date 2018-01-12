@@ -9,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>邮箱认证系统</title>
+    <title>用户信息显示</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,13 +19,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-  <b>邮箱认证系统</b>
-    <form action="result.jsp" method="post" >
-    邮箱地址：<input type="text" name="mailAdd"><br>
-    <input type="submit" value="提交查询内容">
-    </form>
+    <jsp:useBean id="person" class="com.lyq.bean.Person">
+    </jsp:useBean>
+    <% request.setCharacterEncoding("UTF-8"); %>
+      <jsp:setProperty name="person" property="*"/><br>
+    姓名：
+    <jsp:getProperty property="name" name="person"/><br>
+    年龄：
+    <jsp:getProperty property="age" name="person"/><br>
+       性别：
+    <jsp:getProperty property="sex" name="person"/><br>
+       住址：
+    <jsp:getProperty property="address" name="person"/><br>
   </body>
 </html>
