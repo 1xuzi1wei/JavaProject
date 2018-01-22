@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<!-- 声明包 -->
+<package name="myPackage" extends="struts-default" strict-method-invocation="false">
+<action name="userAction" class="com.lyq.action.UserAction" >
+<result name="add">user_add.jsp</result>
+<result name="update">user_update.jsp</result>
+<allowed-methods>add,update</allowed-methods>
+</action>
+</package>
+<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+</struts>
