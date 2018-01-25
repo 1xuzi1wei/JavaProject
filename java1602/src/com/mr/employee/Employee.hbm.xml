@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-24 11:09:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="com.mr.employee.Employee" table="tab_employee">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="NAME"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="SEX"/>
+  </property>
+  <property generated="never" lazy="false" name="business" type="string">
+   <column name="BUSINESS"/>
+  </property>
+  <property generated="never" lazy="false" name="address" type="string">
+   <column name="ADDRESS"/>
+  </property>
+  <property generated="never" lazy="false" name="remark" type="string">
+   <column name="REMARK"/>
+  </property>
+ </class>
+</hibernate-mapping>
