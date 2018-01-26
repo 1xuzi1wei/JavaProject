@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-26 10:07:42 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.mr.person">
+ <class name="com.mr.person.Person" table="tab_person1">
+  <id name="id" type="int">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="sex"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="int">
+   <column name="age"/>
+  </property>
+  <joined-subclass extends="com.mr.person.Person"
+   name="com.mr.person.Student" table="tab_student">
+   <key column="id"/>
+   <property column="school" name="school" type="string"/>
+  </joined-subclass>
+  <joined-subclass name="com.mr.person.Staffer" table="tab_staffer">
+   <key column="id"/>
+   <property column="company" name="company" type="string"/>
+  </joined-subclass>
+ </class>
+</hibernate-mapping>

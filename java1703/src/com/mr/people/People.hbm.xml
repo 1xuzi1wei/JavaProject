@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-25 19:51:38 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="com.mr.people.People" table="tab_people">
+  <id name="id" type="int">
+   <column name="id"/>
+   <generator class="foreign">
+   <param name="property">people</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="sex"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="int">
+   <column name="age"/>
+  </property>
+  <one-to-one class="com.mr.idcard.IDcard" name="idcard" constrained="true"/>
+ </class>
+</hibernate-mapping>

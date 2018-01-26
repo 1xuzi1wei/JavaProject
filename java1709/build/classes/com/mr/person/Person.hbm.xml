@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-26 10:45:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.mr.person">
+ <class abstract="true" name="com.mr.person.Person">
+  <id name="id" type="int">
+   <column name="id"/>
+   <generator class="increment"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="sex"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="int">
+   <column name="age"/>
+  </property>
+  <union-subclass extends="com.mr.person.Person" name="Student" table="tab_student2">
+   <tuplizer class="com.mr.person.Student"/>
+   <property column="school" generated="never" lazy="false"
+    name="school" type="string"/>
+  </union-subclass>
+  <union-subclass extends="com.mr.person.Person" name="Staffer" table="tab_staffer2">
+   <tuplizer class="com.mr.person.Staffer"/>
+   <property column="company" generated="never" lazy="false"
+    name="company" type="string"/>
+  </union-subclass>
+ </class>
+</hibernate-mapping>

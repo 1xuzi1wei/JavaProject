@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-25 22:40:24 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="com.mr.person.Person" table="tab_person">
+  <id name="id" type="int">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <discriminator column="type"/>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="sex"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="int">
+   <column name="age"/>
+  </property>
+  <subclass discriminator-value="学生" extends="com.mr.person.Person" name="com.mr.person.Student">
+   <property name="school" type="string"/>
+  </subclass>
+  <subclass discriminator-value="职员" extends="com.mr.person.Person" name="com.mr.person.Staffer">
+   <property name="company" type="string"/>
+  </subclass>
+ </class>
+</hibernate-mapping>
