@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans>
+	<bean name="user" class="com.mr.user.User">
+		<constructor-arg value="小强"></constructor-arg>
+		<constructor-arg value="26"></constructor-arg>
+		<constructor-arg value="男"></constructor-arg>
+	</bean>
+</beans>
