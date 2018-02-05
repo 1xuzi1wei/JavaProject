@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-27 15:56:46 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="com.mr.user.User" table="tb_user">
+  <id name="id" type="int">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="age" type="int">
+   <column name="age"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="string">
+   <column name="sex"/>
+  </property>
+ </class>
+</hibernate-mapping>
